@@ -1,4 +1,7 @@
-stages {
+pipeline {
+    agent any
+
+    stages {
         stage('Build') {
             agent {
                 docker {
@@ -21,6 +24,7 @@ stages {
         stage('Test') {
             steps {
                 echo 'Test stage'
-           }
+            }
         }
     }
+}
